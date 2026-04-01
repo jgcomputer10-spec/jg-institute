@@ -53,7 +53,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
               <MdLocationOn className="text-blue-600 text-xl" />
-              <p>Rukminigaon house no 74 opposite Golmohar apartment Jayanagar Link Rd, Mandir Path, Beltola Tiniali, Guwahati, Assam 781028</p>
+              <p>THELAMARA CENTER , SONITPUR ASSAM 784149
             </div>
 
             <div className="flex items-center gap-3">
