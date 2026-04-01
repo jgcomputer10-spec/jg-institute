@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const images = ["/hero1.png", "/hero2.jpg", "/hero3.png"];
+const images = ["/course4.webp", "/hero2.jpg", "/hero3.png"];
 
 const texts = [
   "Build Your Career",
