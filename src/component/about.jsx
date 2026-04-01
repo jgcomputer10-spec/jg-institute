@@ -36,7 +36,7 @@ export default function AboutPage() {
               students gain confidence, build projects, and become job-ready.
             </p>
 
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-black leading-relaxed">
               We also provide certified programs that enhance credibility and open doors 
               to career opportunities both in India and abroad.
             </p>
