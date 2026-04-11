@@ -53,7 +53,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
               <MdLocationOn className="text-blue-600 text-xl" />
-              <p>THELAMARA CENTER , SONITPUR ASSAM 784149
+              <p>THELAMARA CENTER , SONITPUR ASSAM </p>
             </div>
 
             <div className="flex items-center gap-3">

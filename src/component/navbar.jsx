@@ -22,7 +22,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Course", path: "/course" },
-    { name: "Verification", path: "/verification" },
+    { name: "Verification", path: "https://bnmiindia.com/page.php?page=atcVerification" },
     { name: "Certificate", path: "/certificate" },
   ];
 
