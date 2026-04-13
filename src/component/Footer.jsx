@@ -16,7 +16,7 @@ export default function Footer() {
           {/* LEFT */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              Janajog<span className="text-blue-600">.</span>
+              Janasanjog<span className="text-blue-600">.</span>
             </h2>
 
             <div className="flex gap-4 text-xl">
@@ -74,7 +74,7 @@ export default function Footer() {
         <div className="border-t border-gray-400 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
 
           <p>
-            @2025 Agency. All Rights Reserved by Janajog Computer Institute. Designed by <Link href="www.bnmi.com" className="font-semibold">BNMI</Link>
+            @2025 Agency. All Rights Reserved by Janasanjog Computer Institute. Designed by <Link href="www.bnmi.com" className="font-semibold">BNMI</Link>
           </p>
 
           <div className="flex gap-4">

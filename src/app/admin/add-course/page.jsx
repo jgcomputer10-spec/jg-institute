@@ -9,6 +9,9 @@ const DATABASE_ID = "69ccab6200322c2d3fe5";
 const COLLECTION_ID = "course";
 const BUCKET_ID = "69cca99900204c41d553";
 
+// ✅ ADD THIS (same project id you used in appwrite config)
+const PROJECT_ID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || "69cca865002c203fe498";
+
 export default function AdminCourses() {
   const router = useRouter();
 
@@ -24,24 +27,26 @@ export default function AdminCourses() {
   const [file, setFile] = useState(null);
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
-const [editId, setEditId] = useState(null);
-const [preview, setPreview] = useState(null);
-useEffect(() => {
-  const init = async () => {
-    try {
-      // Check if already logged in
-      await account.get();
-      console.log("User already logged in");
-    } catch {
-      console.log("Creating anonymous session...");
-      await account.createAnonymousSession(); // 🔥 THIS FIXES EVERYTHING
-    }
+  const [editId, setEditId] = useState(null);
+  const [preview, setPreview] = useState(null);
 
-    fetchCourses();
-  };
+  // ✅ INIT (session + fetch)
+  useEffect(() => {
+    const init = async () => {
+      try {
+        await account.get();
+        console.log("User already logged in");
+      } catch {
+        console.log("Creating anonymous session...");
+        await account.createAnonymousSession();
+      }
 
-  init();
-}, []);
+      fetchCourses();
+    };
+
+    init();
+  }, []);
+
   // 📦 Fetch Courses
   const fetchCourses = async () => {
     try {
@@ -51,89 +56,85 @@ useEffect(() => {
       );
       setCourses(res.documents);
     } catch (err) {
-      console.log("FETCH ERROR:", err);
+      console.log("FETCH ERROR:", err.message, err);
     }
   };
 
-  useEffect(() => {
-    fetchCourses();
-  }, []);
+  // ➕ Add / Update Course
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // ➕ Add Course
- const handleSubmit = async (e) => {
-  e.preventDefault();
+    try {
+      setLoading(true);
 
-  try {
-    setLoading(true);
+      let imageId = null;
 
-    let imageId = null;
-
-    // Upload new image if selected
-    if (file) {
-      const upload = await storage.createFile(
-        BUCKET_ID,
-        ID.unique(),
-        file
-      );
-      imageId = upload.$id;
-    }
-
-    if (editId) {
-      // ✏️ UPDATE COURSE
-      await databases.updateDocument(
-        DATABASE_ID,
-        COLLECTION_ID,
-        editId,
-        {
-          ...form,
-          ...(imageId && { image: imageId }),
-        }
-      );
-
-      alert("Course Updated ✅");
-    } else {
-      // ➕ CREATE COURSE
-      if (!imageId) {
-        alert("Please upload image");
-        setLoading(false);
-        return;
+      // Upload image
+      if (file) {
+        const upload = await storage.createFile(
+          BUCKET_ID,
+          ID.unique(),
+          file
+        );
+        imageId = upload.$id;
       }
 
-      await databases.createDocument(
-        DATABASE_ID,
-        COLLECTION_ID,
-        ID.unique(),
-        {
-          ...form,
-          image: imageId,
+      if (editId) {
+        // ✏️ UPDATE
+        await databases.updateDocument(
+          DATABASE_ID,
+          COLLECTION_ID,
+          editId,
+          {
+            ...form,
+            ...(imageId && { image: imageId }),
+          }
+        );
+
+        alert("Course Updated ✅");
+      } else {
+        // ➕ CREATE
+        if (!imageId) {
+          alert("Please upload image");
+          setLoading(false);
+          return;
         }
-      );
 
-      alert("Course Added ✅");
+        await databases.createDocument(
+          DATABASE_ID,
+          COLLECTION_ID,
+          ID.unique(),
+          {
+            ...form,
+            image: imageId,
+          }
+        );
+
+        alert("Course Added ✅");
+      }
+
+      // Reset
+      setForm({
+        title: "",
+        instructor: "",
+        rating: "",
+        price: "",
+        classes: "",
+        students: "",
+      });
+
+      setFile(null);
+      setPreview(null);
+      setEditId(null);
+
+      fetchCourses();
+    } catch (err) {
+      console.log("SUBMIT ERROR:", err.message, err);
+      alert(err.message);
+    } finally {
+      setLoading(false);
     }
-
-    // Reset
-    setForm({
-      title: "",
-      instructor: "",
-      rating: "",
-      price: "",
-      classes: "",
-      students: "",
-    });
-
-    setFile(null);
-    setPreview(null);
-    setEditId(null);
-
-    fetchCourses();
-  } catch (err) {
-    console.log(err);
-    alert(err.message);
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   // ❌ Delete Course
   const handleDelete = async (id) => {
@@ -145,7 +146,7 @@ useEffect(() => {
       );
       fetchCourses();
     } catch (err) {
-      console.log("DELETE ERROR:", err);
+      console.log("DELETE ERROR:", err.message, err);
     }
   };
 
@@ -197,7 +198,7 @@ useEffect(() => {
             <div key={c.$id} className="bg-white rounded-xl shadow-md">
 
               <img
-                src={`https://cloud.appwrite.io/v1/storage/buckets/${BUCKET_ID}/files/${c.image}/view?project=${process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID}`}
+                src={`https://cloud.appwrite.io/v1/storage/buckets/${BUCKET_ID}/files/${c.image}/view?project=${PROJECT_ID}`}
                 className="h-32 w-full object-cover"
               />
 
