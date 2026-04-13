@@ -6,8 +6,8 @@ import { databases } from "@/lib/appwrite";
 
 const DATABASE_ID = "69ccab6200322c2d3fe5";
 const COLLECTION_ID = "course";
-const BUCKET_ID = process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID;
-const PROJECT_ID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
+const BUCKET_ID = "69cca99900204c41d553";
+const PROJECT_ID = "69cca865002c203fe498";
 
 export default function CoursePage() {
   const [courses, setCourses] = useState([]);
