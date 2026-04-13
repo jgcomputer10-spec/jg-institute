@@ -69,12 +69,13 @@ export default function CoursePage() {
 
               {/* IMAGE */}
               <div className="relative w-full h-52">
-                <Image
-                  src={`https://cloud.appwrite.io/v1/storage/buckets/${BUCKET_ID}/files/${course.image}/view?project=${PROJECT_ID}`}
-                  alt={course.title}
-                  fill
-                  className="object-cover"
-                />
+             <Image
+  src={`https://cloud.appwrite.io/v1/storage/buckets/${BUCKET_ID}/files/${course.image}/view?project=${PROJECT_ID}`}
+  alt={course.title}
+  fill
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  className="object-cover"
+/>
 
                 <span className="absolute bottom-3 right-3 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
                   BEST SELLER
@@ -108,7 +109,7 @@ export default function CoursePage() {
                   </div>
 
                   <span className="text-lg font-bold text-gray-900">
-                    ${course.price}
+                    ₹ {course.price}
                   </span>
 
                 </div>

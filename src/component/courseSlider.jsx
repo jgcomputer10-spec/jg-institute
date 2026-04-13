@@ -137,7 +137,7 @@ export default function CoursesSlider() {
                 </div>
 
                 <span className="text-xl font-bold">
-                  ${course.price}
+                  ₹ {course.price}
                 </span>
               </div>
 
