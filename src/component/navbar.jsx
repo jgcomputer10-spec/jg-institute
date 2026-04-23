@@ -20,7 +20,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+  { name: "About", path: "/about" },
     { name: "Course", path: "/course" },
     { name: "Verification", path: "https://bnmiindia.com/page.php?page=atcVerification" },
     { name: "Certificate", path: "https://bnmiindia.com/page.php?page=Certifications" },
