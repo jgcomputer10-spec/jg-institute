@@ -23,7 +23,7 @@ const Navbar = () => {
     { name: "About", path: "/about" },
     { name: "Course", path: "/course" },
     { name: "Verification", path: "https://bnmiindia.com/page.php?page=atcVerification" },
-    { name: "Certificate", path: "/certificate" },
+    { name: "Certificate", path: "https://bnmiindia.com/page.php?page=Certifications" },
   ];
 
   return (

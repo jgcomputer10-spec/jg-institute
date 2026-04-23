@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-
-const images = ["/course4.webp", "/hero2.jpg", "/hero3.png"];
+import Link from "next/link";
+const images = ["/course4.webp", "/hero2.jpg", "/course1.jpg"];
 
 const texts = [
   "Build Your Career",
@@ -81,12 +81,13 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full w-full sm:w-auto">
+            <Link href="/course" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full w-full sm:w-auto">
               Enroll Now
-            </button>
-            <button className="border border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-full w-full sm:w-auto">
-              Explore Courses
-            </button>
+            </Link>
+            
+            <Link href="/course" className="border border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-full w-full sm:w-auto">
+  Explore Courses
+</Link>
           </div>
         </div>
       </div>

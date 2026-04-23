@@ -87,9 +87,12 @@ export default function CoursesSlider() {
           Popular Courses
         </h2>
 
-        <Link href="/course" className="text-blue-600 hover:underline">
-          View All Courses →
-        </Link>
+     <Link
+  href="/course"
+  className="border border-blue-600 text-blue-600 px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg"
+>
+  View All Courses →
+</Link>
       </div>
 
       {/* SLIDER */}

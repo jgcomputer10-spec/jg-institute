@@ -11,12 +11,24 @@ export default function ContactSection() {
     message: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(form);
-    alert("Message Sent!");
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
 
+  const message = `📩 New Contact Form Submission:
+
+👤 Name: ${form.firstName} ${form.lastName}
+📧 Email: ${form.email}
+📱 Phone: ${form.phone}
+
+📝 Message:
+${form.message}`;
+
+  const phoneNumber = "917002416852"; // 👉 put your WhatsApp number
+
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+};
   return (
     <section className="py-20 px-4 bg-gray-50">
 

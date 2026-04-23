@@ -23,13 +23,13 @@ export default function AboutPage() {
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Who We Are
             </h2>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-black mb-4 leading-relaxed">
               We are a modern computer training institute dedicated to providing high-quality 
               education in the field of technology and digital skills. Our goal is to bridge 
               the gap between theoretical knowledge and real-world industry requirements.
             </p>
 
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-black mb-4 leading-relaxed">
               With a team of experienced instructors and industry professionals, we offer 
               practical, hands-on training in areas such as web development, graphic design, 
               digital marketing, and computer fundamentals. Our courses are designed to help 
@@ -60,7 +60,7 @@ export default function AboutPage() {
 
           <div className="bg-white p-6 rounded-2xl shadow-md">
             <h3 className="text-xl font-semibold mb-3">Our Mission</h3>
-            <p className="text-gray-600">
+            <p className="text-black">
               Our mission is to provide accessible, affordable, and high-quality education 
               that equips students with practical skills and prepares them for real-world 
               challenges in the digital era.
@@ -69,7 +69,7 @@ export default function AboutPage() {
 
           <div className="bg-white p-6 rounded-2xl shadow-md">
             <h3 className="text-xl font-semibold mb-3">Our Vision</h3>
-            <p className="text-gray-600">
+            <p className="text-black">
               Our vision is to become a leading training institute recognized for excellence 
               in education, innovation, and student success across national and international platforms.
             </p>
@@ -88,42 +88,42 @@ export default function AboutPage() {
 
           <div className="p-6 rounded-2xl shadow-md bg-white">
             <h4 className="font-semibold mb-2">Expert Trainers</h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-black text-sm">
               Learn from industry professionals with real-world experience.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl shadow-md bg-white">
             <h4 className="font-semibold mb-2">Practical Learning</h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-black text-sm">
               Hands-on training with real projects and assignments.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl shadow-md bg-white">
             <h4 className="font-semibold mb-2">Certified Courses</h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-black text-sm">
               Get recognized certificates to boost your career.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl shadow-md bg-white">
             <h4 className="font-semibold mb-2">Affordable Fees</h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-black text-sm">
               Quality education at reasonable pricing.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl shadow-md bg-white">
             <h4 className="font-semibold mb-2">Career Support</h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-black text-sm">
               Guidance for jobs, freelancing, and internships.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl shadow-md bg-white">
             <h4 className="font-semibold mb-2">Modern Infrastructure</h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-black text-sm">
               Well-equipped labs and updated technology.
             </p>
           </div>

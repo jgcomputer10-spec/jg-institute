@@ -163,9 +163,9 @@ export default function CoursePage() {
             <div className="flex flex-col gap-4">
 
               {/* ENQUIRE */}
-              <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                Enquire Now
-              </button>
+              <h2 className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition text-center">
+               For More Enquire click below
+              </h2>
 
               {/* WHATSAPP */}
               <a
