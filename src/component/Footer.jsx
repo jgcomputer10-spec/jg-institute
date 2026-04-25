@@ -20,10 +20,32 @@ export default function Footer() {
             </h2>
 
             <div className="flex gap-4 text-xl">
-              <FaFacebookF className="cursor-pointer hover:text-blue-600" />
-              <FaTwitter className="cursor-pointer hover:text-blue-600" />
-              <FaInstagram className="cursor-pointer hover:text-blue-600" />
-            </div>
+
+  <a 
+    href="https://www.facebook.com/share/1BWfKHL7XK/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <FaFacebookF className="cursor-pointer hover:text-blue-600" />
+  </a>
+
+  <a 
+    href="https://www.instagram.com/janasanjogcomputerinstitute?igsh=cjB3bWx4eXRtOWNj" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <FaInstagram className="cursor-pointer hover:text-blue-600" />
+  </a>
+
+  <a 
+    href="https://twitter.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <FaTwitter className="cursor-pointer hover:text-blue-600" />
+  </a>
+
+</div>
           </div>
 
           {/* SITEMAP */}
@@ -33,7 +55,15 @@ export default function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/course">Courses</Link></li>
               <li><Link href="#">Mentor</Link></li>
-              <li><Link href="/contact">Contact Us</Link></li>
+             <li>
+  <a
+    href="https://wa.me/917002416852"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Contact Us
+  </a>
+</li>
             </ul>
           </div>
 

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-const images = ["/course4.webp", "/hero2.jpg", "/course1.jpg"];
+const images = ["/banner.jpeg", "/banner.jpeg", "/banner.jpeg"];
 
 const texts = [
   "Build Your Career",
@@ -55,13 +55,13 @@ const Hero = () => {
 
       {/* IMAGE */}
       <div className="absolute inset-0">
-        <Image
-          src={images[index]}
-          alt="hero"
-          fill
-          priority
-          className="object-cover transition-opacity duration-1000"
-        />
+      <Image
+  src={images[index]}
+  alt="hero"
+  fill
+  priority
+  className="transition-opacity duration-1000 object-contain"
+/>
       </div>
 
       {/* OVERLAY */}
